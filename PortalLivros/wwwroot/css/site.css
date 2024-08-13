@@ -1,0 +1,740 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+
+}
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.banner {
+    background-image: url("");
+    background-size: cover;
+    height: 300px;
+    text-align: center;
+    color: Black;
+    padding: 20px;
+}
+
+
+    .banner h2 {
+        font-size: 32px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+
+    .banner .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+.destaques {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.livro {
+    margin: 10px;
+
+}
+/*background pagina inicial generica*/
+.bodynho{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("../img/paginagenerica.svg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+/*background laranja demais paginas*/
+.bodynho02 {
+    background-image: url(../img/pages02.svg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+
+
+.logu {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.banner {
+    margin-top: 130px; /* Ajuste o valor conforme necessário */
+}
+/*---Login----*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+span {
+    font-size: 12px;
+}
+
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #6f3106;
+    background-color: #6f3106;
+    color: #ffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+}
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    button.ghost {
+        background-color: transparent;
+        border-color: #FFFFFF;
+    }
+
+form {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.header-login {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(img/PaginaGenerica02.svg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    position: absolute;
+    overflow: hidden;
+    width: 1080px;
+    min-height: 480px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background: #023047;
+    background: -webkit-linear-gradient(to right, #03071e, #035781);
+    background: #6f3106;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+.social-container {
+    margin: 30px 0;
+}
+
+    .social-container a {
+        border: 1px solid #DDDDDD;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        height: 40px;
+        width: 40px;
+    }
+/*----Botão Inicio site-----*/
+.text-box {
+    width: 90%;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+ .text-box h1 {
+    font-size: 100px;
+ }
+ .text-box p {
+    margin: 10px 0 40px;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+ }
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(100, 61, 1);
+    border-radius: 500%;
+    padding: 12px 24px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    top: 150px;
+    left: -550px;
+}
+ .hero-btn:hover {
+    border: 1px solid rgb(78, 51, 0);
+    background: rgb(99, 48, 1);
+    transition: 1s;
+    color: rgb(255, 255, 255);
+ }
+
+nav .fas {
+    display: none;
+}
+
+/*----Botões Diretórios-----*/
+.nav-links {
+    flex: 1;
+    text-align: center;
+}
+
+    .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+        margin-top: 35px; /* Ajuste o valor conforme necessário */
+    }
+
+        .nav-links ul li a {
+            color: rgb(117, 66, 0);
+            text-decoration: none;
+            font-size: 16px;
+        
+        }
+
+        .nav-links ul li ::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: white;
+            display: block;
+            margin: auto;
+            transition: 0.4s;
+        }
+
+        .nav-links ul li :hover::after {
+            width: 100%;
+        }
+/*----Botão Inicio site-----*/
+.text-box {
+    width: 90%;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+    .text-box h1 {
+        font-size: 60px;
+    }
+
+    .text-box p {
+        margin: 10px 0 40px;
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+    }
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(100, 61, 1);
+    border-radius: 500%;
+    padding: 12px 24px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    top: 150px;
+    left: -550px;
+}
+
+    .hero-btn:hover {
+        border: 1px solid rgb(78, 51, 0);
+        background: rgb(99, 48, 1);
+        transition: 1s;
+        color: rgb(255, 255, 255);
+    }
+
+nav .fas {
+    display: none;
+}
+
+/*    CARRINHO        */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-container {
+    width: 80%;
+    margin: 240px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .cart-container h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: rgb(99, 48, 1);
+    }
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+}
+
+    .cart-item img {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+
+.item-details {
+    flex: 1;
+}
+
+    .item-details h3 {
+        margin: 0;
+        font-size: 18px;
+        color: rgb(99, 48, 1);
+    }
+
+    .item-details p {
+        color: #777;
+    }
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.item-price {
+    font-size: 18px;
+    color: rgb(99, 48, 1);
+    margin-right: 20px;
+}
+
+.item-quantity {
+    width: 50px;
+    margin-right: 20px;
+    border: 1px solid #ccc; /* Borda sempre visível */
+    border-radius: 4px;
+    padding: 5px;
+}
+
+    .item-quantity::-webkit-inner-spin-button,
+    .item-quantity::-webkit-outer-spin-button {
+        opacity: 1; /* Mostrar setas no Chrome */
+    }
+
+.item-quantity {
+    -moz-appearance: textfield; /* Remover setas no Firefox */
+}
+
+.item-quantity {
+    appearance: auto; /* Mostrar setas */
+}
+
+.remove-item {
+    background-color: rgb(99, 48, 1);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+    .remove-item:hover {
+        background-color: #7a2d00;
+    }
+
+.cart-summary {
+    margin-top: 30px;
+}
+
+    .cart-summary h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(99, 48, 1);
+    }
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+    font-size: 18px;
+}
+
+    .summary-item span {
+        font-size: 24px; /* Aumentando o tamanho da fonte */
+    }
+
+.checkout-button {
+    width: 100%;
+    background-color: rgb(99, 48, 1);
+    color: #fff;
+    border: none;
+    padding: 15px 0;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+    .checkout-button:hover {
+        background-color: #7a2d00;
+    }
+
+/*hahahahahah*/
+
+
+.livro {
+    background-color: #f2a24e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+    .livro img {
+        border-radius: 5px;
+    }
+
+    .livro h3 {
+        font-size: 1.5em;
+        margin: 10px 0;
+
+    }
+    .livro p {
+        font-size: 1em;
+        color: white;
+        margin-bottom: 10px;
+    }
+
+.preco {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.btn {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+    .btn:hover {
+        background-color: #ccc;
+    }
+
+
+/* Estilos gerais do carrossel */
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    background-color: #E8B05D); /* Fundo do carrossel */
+    padding: 0px 0;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Estilo dos itens dentro do carrossel */
+.carousel-item .livro {
+  background-color: #A07129;
+  border-radius: 15px;
+  text-align: center;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 200px; /* Ajuste a largura conforme necessário */
+}
+
+.carousel-item .livro:hover {
+  transform: translateY(-10px);
+}
+
+.carousel-item .livro img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carousel-item .livro h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: white;
+}
+
+.carousel-item .livro p {
+  font-size: 1em;
+  color: rgb(38, 28, 19);
+}
+
+.carousel-item .preco {
+  font-size: 1.2em;
+  color: rgb(255 162 62);
+  margin-bottom: 15px;
+}
+
+.carousel-item .btn {
+  background-color: #9d5c00e3;
+  color: white;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-item .btn:hover {
+  background-color: #ccc;
+}
+
+.todoslivros {
+    background-color: #814F04;
+    color: white;
+    padding: 3px;
+    width: 30vh; /* Define a largura do contêiner */
+    display: flex;
+    align-items: center; /* Alinha verticalmente ao centro se houver múltiplas linhas */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    text-align: center; /* Centraliza o texto dentro do contêiner */
+    border-radius: 10px;
+}

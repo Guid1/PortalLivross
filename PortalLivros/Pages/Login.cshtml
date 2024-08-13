@@ -1,0 +1,115 @@
+﻿@page
+@model PortalLivros.Pages.LoginModel
+@using System.Globalization
+@{
+	ViewData["classe-background"] = "bodynho02";
+}
+
+<header class="p-0 bg-none bg-transparent">
+
+
+	<section class="header bg-transparent">
+        <nav>
+			<a href="index.html"><img class="logu" alt="logo" src="~/img/Logo.png" width="150px;"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+
+                    <li><a href="~/Index">INICIO</a></li>
+
+                    <li><a href="~/Livros">LIVROS</a></li>
+
+					<li><a href="~/Promocao">PROMOÇÕES</a></li>
+
+
+                    <li><a href="~/Carrinho">CARRINHO</a></li>
+
+					<li><strong><a href="~/Login">SUA CONTA</a></strong></li>
+
+						
+                </ul>
+			</div>
+
+		</nav>
+	</section>
+</header>
+
+
+		<div class="container" id="container">
+			<div class="form-container sign-up-container">
+
+				<form action="">
+					<h1>Criar Conta</h1>
+					<div class="social-container">
+						<a href="#" class="social"><i class="fa fa-facebook"></i></a>
+						<a href="#" class="social"><i class="fa fa-google"></i></a>
+						<a href="#" class="social"><i class="fa fa-linkedin"></i></a>
+					</div>
+					<span>ou use seu email</span>
+					<input type="text" name="name" placeholder="Nome">
+					<input type="email" name="email" placeholder="Email">
+					<input type="password" name="password" placeholder="Senha">
+					<button>Cadastrar</button>
+				</form>
+			</div>
+			<div class="form-container sign-in-container">
+				<form action="#">
+					<h1>Continue com</h1>
+					<div class="social-container">
+						<a href="#" class="social"><i class="fa fa-facebook"></i></a>
+						<a href="#" class="social"><i class="fa fa-google"></i></a>
+						<a href="#" class="social"><i class="fa fa-linkedin"></i></a>
+					</div>
+					<span>ou use sua conta</span>
+					<input type="email" name="email" placeholder="Email">
+					<input type="Senha" name="Senha" placeholder="Senha">
+					<a href="#">Esqueci minha senha</a>
+
+					<button>Entrar</button>
+				</form>
+			</div>
+			<div class="overlay-container">
+				<div class="overlay">
+					<div class="overlay-panel overlay-left">
+						<h1>Já cadastrado</h1>
+						<p>Caso já esteja cadastrado entre aqui</p>
+						<button class="ghost" id="signIn">Entrar</button>
+					</div>
+					<div class="overlay-panel overlay-right">
+						<h1>Novo por aqui?</h1>
+						<p>Crie já sua conta</p>
+						<button class="ghost" id="signUp">Cadastrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!------JavaScript for Toggle Menu ------->
+
+		<script>
+			const signUpButton = document.getElementById('signUp');
+			const signInButton = document.getElementById('signIn');
+			const container = document.getElementById('container');
+
+			signUpButton.addEventListener('click', () => {
+				container.classList.add("right-panel-active");
+			});
+			signInButton.addEventListener('click', () => {
+				container.classList.remove("right-panel-active");
+			});
+
+			var navLinks = document.getElementById("navLinks");
+
+			function showMenu() {
+				navLinks.style.right = "0";
+			}
+
+			function hideMenu() {
+				navLinks.style.right = "-200px";
+			}
+
+
+
+		</script>
+

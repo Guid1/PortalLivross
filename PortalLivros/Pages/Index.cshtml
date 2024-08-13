@@ -1,0 +1,43 @@
+﻿@page
+@using System.Globalization
+@model IndexModel
+@{
+    ViewData["Title"] = "Página Inicial";
+    ViewData["classe-background"] = "bodynho";
+}
+
+<header class="p-0 bg-none bg-transparent">
+
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+
+                    <li><strong><a href="~/Index">INICIO</a></strong></li>
+
+                    <li><a href="~/Livros">LIVROS</a></li>
+
+                    <li><a href="~/Promocao">PROMOÇÕES</a></li>
+
+                    <li><a href="~/Carrinho">CARRINHO</a></li>
+
+                    <li><a href="~/Login">SUA CONTA</a></li>
+
+
+                </ul>
+            </div>
+        </nav>
+
+</header>
+
+
+<div class="text-box">
+
+    <h1></h1>
+
+
+    <a href="~/Livros" class="hero-btn"><strong>Clique Aqui!</strong></a>
+
+</div>
+
+

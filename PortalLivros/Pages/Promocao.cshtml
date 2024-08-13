@@ -1,0 +1,69 @@
+﻿@page
+@model PortalLivros.Pages.PromocaoModel
+@using System.Globalization
+@{
+    ViewData["classe-background"] = "bodynho02";
+}
+<header class="p-0 bg-transparent">
+    <section>
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <a href="~/Index"><img class="logu" alt="logo" src="~/img/Logo.png" width="135px;"></a>
+                    <li><a href="~/Index">INICIO</a></li>
+                    <li><a href="~/Livros">LIVROS</a></li>
+                    <li><strong><a href="~/Promocao">PROMOÇÕES</a></strong></li>
+                    <li><a href="~/Carrinho">CARRINHO</a></li>
+                    <li><a href="~/Login">SUA CONTA</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <section class="banner">
+        <h2 class="todoslivros">Promoções</h2>
+        <p><strong>Livros promocionais da semana!</strong></p>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
+            <div class="carousel-inner">
+                @{
+                    var chunkedList = Model.listaDestaqueViewModel
+                    .Select((x, i) => new { x, i })
+                    .GroupBy(x => x.i / 3)
+                    .Select(g => g.Select(x => x.x).ToList())
+                    .ToList();
+                }
+
+                @foreach (var chunk in chunkedList)
+                {
+                    <div class="carousel-item @(chunkedList.IndexOf(chunk) == 0 ? "active" : "")">
+                        <div class="d-flex justify-content-center">
+                            @foreach (var destaque in chunk)
+                            {
+                                <div class="livro col-10 col-sm-6 col-md-4 col-lg-3 d-flex flex-column justify-content-between">
+                                    <div class="d-flex px-0 flex-column justify-content-between flex-grow-1">
+                                        <img src="@destaque.Livro.Url" alt="Livro @destaque.Livro.Id" class="livro-img img-fluid">
+                                        <h3 class="h5">@destaque.Livro.Titulo</h3>
+                                        <p class="small">@destaque.Livro.Autor</p>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center justify-content-center">
+                                        <span class="preco m-0">@string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", destaque.Livro.Preco)</span>
+                                        <div class="col-8 d-flex align-items-center justify-content-center"><a href="~/Carrinho" class="btn btn-primary btn-sm">Comprar</a></div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </section>
+</header>
